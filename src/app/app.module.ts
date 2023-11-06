@@ -3,8 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NoteComponent } from './components/note/note.component';
+import { NoteComponent } from './pages/notes/note.component';
 import { ButtonComponent } from './components/button/button.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ButtonComponent } from './components/button/button.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ButtonComponent
+    ButtonComponent,
+    NavbarComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

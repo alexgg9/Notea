@@ -3,14 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NoteComponent } from './pages/notes/note.component';
+import { NoteComponent } from './components/note/note.component';
 import { ButtonComponent } from './components/button/button.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { NotesService } from './services/notes.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NoteComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +18,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ButtonComponent,
     NavbarComponent
   ],
-  providers: [],
+  providers: [NotesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

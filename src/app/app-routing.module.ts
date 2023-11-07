@@ -2,14 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginGuard } from './guards/login.guard';
 import { Error404Component } from './pages/error404/error404.component';
-import { NoteComponent } from './pages/notes/note.component';
+import { NoteComponent } from './components/note/note.component';
 import { NewComponent } from './pages/new/new.component';
 import { LoginComponent } from './pages/login/login.component';
+import { NotesComponent } from './pages/notes/notes.component';
 
 
 
 const routes: Routes = [
-  {path:"home", component:NoteComponent ,
+  {path:"home", component:NotesComponent ,
   canActivate:[LoginGuard]},
   {path:"new", component:NewComponent,
   canActivate:[LoginGuard]},

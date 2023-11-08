@@ -12,6 +12,11 @@ export class NotesService {
   constructor() { }
 
   public createNote(newNote:INote){
+    /**
+     * Base de datos -> clave primeria id
+     */
+    let id=Math.floor(Math.random()*1000)+1;
+    newNote.id=id;
     this.notes.push(newNote);
   }
   public removeNote(id:any){
@@ -22,5 +27,14 @@ export class NotesService {
   }
   public getNotes():INote[]{
     return this.notes;
+  }
+  public updateNote(note:INote){
+    let n=this.notes.map(n=>{
+      if(n.id==note.id){
+        n.title=note.title;
+        n.description=note.description;
+      }
+      return n;
+    })
   }
 }

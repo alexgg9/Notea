@@ -1,25 +1,46 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Notas</a>
+    <a class="navbar-brand" href="#">
+      <img src="assets/icons/notas.png" style="width: 25px; height: 25px; margin-right: 10px;" class="logo-img"> Notea
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" routerLink="/">Inicio</a>
-        <a class="nav-link" routerLink="/new">Nueva nota</a>
-        <a class="nav-link" routerLink="/about">Acerca de</a>
+        <a class="nav-link active" aria-current="page" routerLink="/">{{"Inicio"|translate}}</a>
+        <a class="nav-link" routerLink="/new">{{"Nueva nota"|translate}}</a>
+        <a class="nav-link" routerLink="/about">{{"Acerca de"|translate}}</a>
         <li class="nav-item dropdown" *ngIf="this.loginS.user">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Cuenta
+            {{"Cuenta"|translate}}
           </a>
           <ul class="dropdown-menu" >
             <li>   <span style="padding:10px;">{{this.loginS.user!.name}}</span></li>
             <li>   <span style="padding:10px;">{{this.loginS.user!.email}}</span></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#" (click)="logout()" > Logout </a></li>
+            <li><a class="dropdown-item" href="#" (click)="logout()" >{{"Cerrar sesión"|translate}}</a></li>
           </ul>
         </li>
+        <li class="nav-item dropdown">
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              {{ "Idioma" | translate }}
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <button class="dropdown-item" (click)="changeLanguage('es')">
+                  <img src="assets/img/spain.png" alt="Español" class="flag-icon small-flag" style="width: 2rem;"> Español
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" (click)="changeLanguage('en')">
+                  <img src="assets/img/united-kingdom.png" alt="Inglés" class="flag-icon small-flag" style="width: 2rem;"> Inglés
+                </button>
+              </li>
+            </ul>
+          </div>
+        </li>        
       </div>
     </div>
   </div>
